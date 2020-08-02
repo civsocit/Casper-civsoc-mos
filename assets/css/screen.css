@@ -112,7 +112,6 @@ body {
 .site-header-background {
     position: relative;
     margin-top: 64px;
-    padding-bottom: 12px;
     color: #fff;
     background: color-mod(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
@@ -373,10 +372,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 21px;
 }
 
-.site-home-header .site-nav-logo {
-    display: none;
-}
-
 .site-nav-content {
     position: relative;
     align-self: flex-start;
@@ -389,7 +384,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0 -12px;
     padding: 0;
     list-style: none;
-    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .nav li {
@@ -421,7 +415,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 1px;
     background: #fff;
     opacity: 0.25;
-    transition: all 0.35s ease-in-out;
 }
 
 .nav li a:hover:before {
@@ -445,7 +438,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: none;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(175%);
 }
 
 .nav-post-title.dash {
@@ -2798,7 +2790,7 @@ Usage (In Ghost editor):
 .site-footer {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     color: #fff;
     background: color-mod(var(--darkgrey) l(-5%));
 }
