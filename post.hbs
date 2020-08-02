@@ -39,26 +39,6 @@ into the {body} of the default.hbs template --}}
                             {{#foreach authors}}
                             <li class="author-list-item">
 
-                                <div class="author-card">
-                                    {{#if profile_image}}
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                                    {{else}}
-                                    <div class="author-profile-image">{{> "icons/avatar"}}</div>
-                                    {{/if}}
-                                    <div class="author-info">
-                                        {{#if bio}}
-                                        <div class="bio">
-                                            <h2>{{name}}</h2>
-                                            <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
-                                        </div>
-                                        {{else}}
-                                        <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                                        {{/if}}
-                                    </div>
-                                </div>
-
                                 {{#if profile_image}}
                                 <a href="{{url}}" class="author-avatar">
                                     <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
@@ -75,7 +55,7 @@ into the {body} of the default.hbs template --}}
                             <h4 class="author-name">{{authors}}</h4>
                             <div class="byline-meta-content">
                                 <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute=(t "1 минута") minutes=(t "% мин.")}}</span>
                             </div>
                         </section>
 
@@ -135,7 +115,7 @@ into the {body} of the default.hbs template --}}
                 <article class="read-next-card">
                     <header class="read-next-card-header">
                         {{#../primary_tag}}
-                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+                        <h3><span>Больше на тему</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
                     <div class="read-next-card-content">
@@ -145,14 +125,14 @@ into the {body} of the default.hbs template --}}
                                 <h4><a href="{{url}}">{{title}}</a></h4>
                                 <div class="read-next-card-meta">
                                     <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                        {{reading_time}}</p>
+                                        {{reading_time minute=(t "1 минута") minutes=(t "% мин.")}}</p>
                                 </div>
                             </li>
                             {{/foreach}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Нет статей' singular='% статья' plural='% статей'}}
                             →</a>
                     </footer>
                 </article>
@@ -191,24 +171,6 @@ into the {body} of the default.hbs template --}}
             activeClass: 'nav-post-title-active'
         });
         // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
     });
 </script>
 {{/contentFor}}
