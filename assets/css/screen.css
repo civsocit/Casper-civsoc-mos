@@ -2755,10 +2755,6 @@ Usage (In Ghost editor):
         background: var(--darkmode);
     }
 
-    img {
-        opacity: 0.9;
-    }
-
     .site-header-background:before {
         background: rgba(0,0,0,0.6);
     }
