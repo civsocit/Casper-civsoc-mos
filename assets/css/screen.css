@@ -503,6 +503,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
+.age-warning {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
+
+.age-warning svg {
+    height: 1.8rem;
+    fill: #ff0000;
+}
+
 .social-link-fb svg {
     height: 1.6rem;
 }
