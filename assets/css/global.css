@@ -7,7 +7,7 @@
     --green: #a4d037;
     --purple: #ad26b4;
     --yellow: #fecd35;
-    --red: #f05230;
+    --red: #ff1419;
     --darkgrey: #15171A;
     --midgrey: #738a94;
     --lightgrey: #c5d2d9;
@@ -15,6 +15,7 @@
     --pink: #fa3a57;
     --brown: #a3821a;
     --darkmode: color-mod(var(--darkgrey) l(+2%));
+    --lightmode: color-mod(var(--whitegrey) l(+2%));
 }
 
 /* Reset
@@ -281,7 +282,7 @@ html {
 }
 body {
     overflow-x: hidden;
-    color: color-mod(var(--midgrey) l(-30%));
+    color: color-mod(var(--red) l(-30%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
     line-height: 1.6em;
@@ -309,7 +310,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid color-mod(var(--lightgrey) l(+10%));
+    border-top: 1px solid color-mod(var(--darkgrey) l(+10%));
 }
 
 audio,
@@ -375,7 +376,7 @@ dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
-    color: var(--darkgrey);
+    color: var(--whitegrey);
     font-weight: 500;
     text-align: right;
 }
@@ -388,7 +389,7 @@ dd {
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;
+    border-left: var(--darkgrey) 0.5em solid;
 }
 
 blockquote p {
@@ -416,11 +417,12 @@ blockquote cite a {
 }
 
 a {
-    color: color-mod(var(--blue) l(-5%));
+    color: color-mod(var(--red) l(-5%));
     text-decoration: none;
 }
 
 a:hover {
+    color: #ff4c4d;
     text-decoration: underline;
 }
 
